@@ -67,6 +67,14 @@ body {
     color: peachpuff;
 }
 
+.page-title h2{
+    color: black;
+}
+
+.page-title p {
+    color: black;
+}
+
 .two-column-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -105,6 +113,23 @@ body {
 
 .social-link-wrapper a:hover {
     color: peachpuff;
+}
+
+/* MENU */
+.menu-item {
+    margin-left: 100px;
+    margin-right: 100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.menu-image img{
+    padding: 35px;
+    width: 75%;
+}
+
+.menu-desc {
+    padding: 35px;
 }
 
 
