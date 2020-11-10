@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Take 'N Bake ⋆ Home Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Poppins:100,200&display=swap" rel="stylesheet">
+    <style>
+        body {
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* NAV BAR STYLES */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+.right-side {
+    display: flex;
+}
+
+.nav-wrapper > .right-side > div {
+    margin-right: 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.nav-right-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid peachpuff;
+}
+
+.nav-link-wrapper a:hover {
+    color: peachpuff;
+}
+
+.nav-wrapper > .left-side > div {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid peachpuff;
+}
+
+.active-nav-link a {
+    color: peachpuff !important;
+}
+
+
+/* ABOUT */
+.page-title {
+    text-align: center;
+    color: peachpuff;
+}
+
+.two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.two-column-wrapper > div {
+    margin-right: 30px;
+}
+
+.profile-image-wrapper img{
+    padding: 35px;
+    width: 100%;
+}
+
+.profile-content-wrapper {
+    padding: 35px;
+}
+
+.profile-content-wrapper h1{
+    color: peachpuff;
+}
+
+.profile-content-wrapper h2{
+    color: peachpuff;
+}
+
+.social-link-wrapper {
+    height: 20px;
+}
+
+.social-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.social-link-wrapper a:hover {
+    color: peachpuff;
+}
+
+
+/* PROJECTS */
+/* PORTFOLIO STYLES */
+.portfolio-items-wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+.portfolio-item-wrapper {
+    position: relative;
+}
+
+.portfolio-img-background {
+    height: 350px;
+    width: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.img-text-wrapper {
+    position: absolute;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    text-align: center;
+    padding-left: 600px;
+    padding-right: 600px;
+}
+
+.logo-wrapper img{
+    width: 50%;
+    margin-bottom: 20px;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    width: 100px;
+}
+
+.img-text-wrapper .subtitle {
+    transition: 1s;
+    font-weight: 600;
+    color: transparent;
+}
+
+.img-text-wrapper:hover .subtitle {
+    font-weight: 600;
+    color: white;
+}
+
+.img-darken {
+    transition: 1s;
+    filter: brightness(15%);
+}
+
+/* Projects details pages */
+.content-title {
+    padding: 30px;
+    color: peachpuff;
+}
+
+.project-title {
+    padding: 30px;
+    color: peachpuff;
+}
+
+/* RESUME */
+.resume-content {
+    padding: 100px;
+}
+
+.resume-content h2 {
+    color: peachpuff;
+}
+
+.credit {
+    color: peachpuff;
+    font-size: 8px;
+}
+
+.credit a{
+    color: peachpuff;
+}
+
+/* BLOG */
+.one-blog {
+    margin-left: 300px;
+    margin-right: 300px;
+    color: grey;
+}
+
+.blog-img-wrapper img {
+    width: 100%;
+}
+
+/*FORM STYLE*/
+
+.form-style-8{
+	font-family: 'Open Sans Condensed', arial, sans;
+	width: 500px;
+	padding: 30px;
+	background: #FFFFFF;
+	margin: 50px auto;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-moz-box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.22);
+	-webkit-box-shadow:  0px 0px 15px rgba(0, 0, 0, 0.22);
+
+}
+.form-style-8 h2 {
+	background: #4D4D4D;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #797979;
+	font-size: 18px;
+	font-weight: 100;
+	padding: 20px;
+	margin: -30px -30px 30px -30px;
+}
+
+.form-style-8 a, .form-style-8 p, .form-style-8 input[type="submit"]{
+	background: white;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #797979;
+	font-size: 18px;
+	font-weight: 100;
+	padding: 15px;
+	border: none;
+}
+
+.form-style-8 input[type="username"],
+.form-style-8 input[type="password"],
+.form-style-8 textarea,
+.form-style-8 select
+{
+	box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	-moz-box-sizing: border-box;
+	outline: none;
+	display: block;
+	width: 100%;
+	padding: 7px;
+	border: none;
+	border-bottom: 1px solid #ddd;
+	background: transparent;
+	margin-bottom: 10px;
+	font: 16px Arial, Helvetica, sans-serif;
+	height: 45px;
+}
+.form-style-8 textarea{
+	resize:none;
+	overflow: hidden;
+}
+.form-style-8 input[type="button"],
+{
+	-moz-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	-webkit-box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	box-shadow: inset 0px 1px 0px 0px #45D6D6;
+	background-color: #2CBBBB;
+	border: 1px solid #27A0A0;
+	display: inline-block;
+	cursor: pointer;
+	color: #FFFFFF;
+	font-family: 'Open Sans Condensed', sans-serif;
+	font-size: 14px;
+	padding: 8px 18px;
+	text-decoration: none;
+	text-transform: uppercase;
+}
+
+
+    </style>
+</head>
+<body>
+<div class="container">
+
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="brand">
+                    <div>Take 'N Bake</div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="nav-link-wrapper active-nav-link">
+                     <a href="{{ url_for('home2') }}">Home</a>
+                </div>
+                <div class="nav-link-wrapper active-nav-link">
+                     <a href="{{ url_for('shop') }}">Shop</a>
+                </div>
+                <div class="nav-link-wrapper">
+                     <a href="{{ url_for('plans') }}">Plans</a>
+                </div>
+                <div class="nav-link-wrapper">
+                     <a href="{{ url_for('menu') }}">Menu</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+
+            <div class="page-title">
+                <h1>Take 'N Bake</h1>
+            </div>
+
+            <div class="form-style-8">
+                <h2>Login to your account</h2>
+                <form action="/login" method="POST">
+                    <input type="username" name="username" placeholder="Username">
+                    <input type="password" name="password" placeholder="Password">
+                    <input type="submit" value="Log in">
+                </form>
+                <p>{{ err }}</p>
+                <a href="{{ url_for('new_user') }}">Create Account</a>
+            </div>
+
+            <div class="blog-img-wrapper">
+
+                <img src="{{ url_for('static', filename='images/homephoto.jpg') }}">
+            </div>
+
+            <div class="two-column-wrapper">
+                <div class="profile-image-wrapper">
+                    <img src="{{ url_for('static', filename='images/familybake.jpg') }}">
+                </div>
+                <div class="profile-content-wrapper">
+                    <h1>Our Origins</h1>
+                    <p>Take 'n Bake is a trendsetting online store, offering our first-rate products and exceptional customer service to shoppers from the comfort of their own homes. We’re a business made up of innovators and forward-thinkers, with the drive and wherewithal to constantly update and improve the online shopping experience.</p>
+                    <p>Our online store has become synonymous with quality, and we ensure a continuous variety of fantastic merchandise that fit any budget. Check it out and start shopping today.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

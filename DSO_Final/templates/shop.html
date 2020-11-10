@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Take 'N Bake ⋆ Shop</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:300|Poppins:100,200&display=swap" rel="stylesheet">
+    <style>
+        /* MASTER STYLES */
+body {
+    margin: 0px;
+    font-family: 'Lato', sans-serif;
+    font-family: 'Poppins', sans-serif;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+/* NAV BAR STYLES */
+.nav-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding: 35px;
+}
+
+.right-side {
+    display: flex;
+}
+
+.nav-wrapper > .right-side > div {
+    margin-right: 20px;
+    font-size: 0.9em;
+    text-transform: uppercase;
+}
+
+.nav-right-wrapper {
+    height: 22px;
+    border-bottom: 1px solid transparent;
+    transition: border-bottom 0.5s;
+}
+
+.nav-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.nav-link-wrapper:hover {
+    border-bottom: 1px solid peachpuff;
+}
+
+.nav-link-wrapper a:hover {
+    color: peachpuff;
+}
+
+.nav-wrapper > .left-side > div {
+    font-size: 1.2em;
+    text-transform: uppercase;
+}
+
+.active-nav-link {
+    border-bottom: 1px solid peachpuff;
+}
+
+.active-nav-link a {
+    color: peachpuff !important;
+}
+
+
+/* ABOUT */
+.page-title {
+    text-align: center;
+    color: peachpuff;
+}
+
+.page-title h2{
+    color: black;
+}
+
+.page-title p {
+    color: black;
+}
+
+.two-column-wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.two-column-wrapper > div {
+    margin-right: 30px;
+}
+
+.profile-image-wrapper img{
+    padding: 35px;
+    width: 100%;
+}
+
+.profile-content-wrapper {
+    padding: 35px;
+}
+
+.profile-content-wrapper h1{
+    color: peachpuff;
+}
+
+.profile-content-wrapper h2{
+    color: peachpuff;
+}
+
+.social-link-wrapper {
+    height: 20px;
+}
+
+.social-link-wrapper a {
+    color: #8a8a8a;
+    text-decoration: none;
+    transition: color 0.5s;
+}
+
+.social-link-wrapper a:hover {
+    color: peachpuff;
+}
+
+/* MENU */
+.menu-item {
+    margin-left: 100px;
+    margin-right: 100px;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.menu-image img{
+    padding: 35px;
+    width: 75%;
+}
+
+.menu-desc {
+    padding: 35px;
+}
+
+
+/* BLOG */
+.one-blog {
+    margin-left: 300px;
+    margin-right: 300px;
+    color: grey;
+}
+
+.blog-img-wrapper img {
+    width: 100%;
+}
+
+/* Plans*/
+.plans {
+    float: left;
+    width: 30%;
+    padding: 10px;
+}
+
+/* SHOP */
+#shop-title {
+    color: peachpuff;
+    text-align: center;
+}
+#shop-title-2 {
+    text-align: center;
+}
+#items {
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.shop-row {
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.shop-pic {
+    margin-top: 70px;
+    float: left;
+    width: 310px;
+    height: 310px;
+    margin-right: 20px;
+    margin-bottom: 20px;
+}
+.shop-pic img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.shop-pic input[type="submit"] {
+	background: white;
+	text-transform: uppercase;
+	font-family: 'Open Sans Condensed', sans-serif;
+	color: #797979;
+	font-size: 18px;
+	font-weight: 100;
+	padding: 20px;
+	border: 1px solid gray;
+	width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="brand">
+                    <div>Take 'N Bake</div>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="nav-link-wrapper">
+                    <a href="index.html">Home</a>
+                </div>
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="shop.html">Shop</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="plans.html">Plans</a>
+                </div>
+                <div class="nav-link-wrapper">
+                    <a href="menu.html">Menu</a>
+                </div>
+                <div class="nav-link-wrapper">
+                     <a href="{{ url_for('acc_page') }}">{{username}}</a>
+                </div>
+            </div>
+        </div>
+
+
+
+    </div>
+    <h1 id="shop-title">Shop</h1>
+    <h2 id="shop-title-2">Get all your high quality baking tools here!</h2>
+    <div id="items">
+        <form action="/action/updateitem" method="POST">
+        <div class="shop-row">
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="spatula" checked>
+                    <img src="{{ url_for('static', filename='images/spatulas.png') }}" alt="spatulas">
+                    <h3>Spatula Set - $15</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="basket">
+                    <img src="{{ url_for('static', filename='images/basket.png') }}">
+                    <h3>Bread Proofing Basket - $15</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="bowl">
+                    <img src="{{ url_for('static', filename='images/bowl.png') }}">
+                    <h3>Mixing Bowl - $15</h3>
+                </label>
+            </div>
+        </div>
+        <div class="shop-row">
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="cup">
+                    <img src="{{ url_for('static', filename='images/cup.png') }}">
+                    <h3>Measuring Cup - $15</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="loaf">
+                    <img src="{{ url_for('static', filename='images/loaf.png') }}">
+                    <h3>Loaf Pan - $12</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="mixer">
+                    <img src="{{ url_for('static', filename='images/mixer.png') }}">
+                    <h3>Hand Mixer - $75</h3>
+                </label>
+            </div>
+        </div>
+        <div class="shop-row">
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="muffin">
+                    <img src="{{ url_for('static', filename='images/muffin.png') }}">
+                    <h3>Muffin Pan - $12</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="pans">
+                    <img src="{{ url_for('static', filename='images/pans.png') }}">
+                    <h3>Cake Tin Set - $25</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="rack">
+                    <img src="{{ url_for('static', filename='images/rack.png') }}">
+                    <h3>Cooling Rack - $10</h3>
+                </label>
+            </div>
+        </div>
+        <div class="shop-row">
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="rolling">
+                    <img src="{{ url_for('static', filename='images/rolling.png') }}">
+                    <h3>Rolling Pin - $8</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                 <label>
+                    <input type="radio" name="item" value="scale">
+                     <img src="{{ url_for('static', filename='images/scale.png') }}">
+                    <h3>Measuring Scale - $35</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="sheet">
+                    <img src="{{ url_for('static', filename='images/sheet.png') }}">
+                    <h3>Baking Sheet - $10</h3>
+                </label>
+            </div>
+        </div>
+        <div class="shop-row">
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="spoons">
+                    <img src="{{ url_for('static', filename='images/spoons.png') }}">
+                    <h3>Measuring Spoon Set - $12</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="stand">
+                    <img src="{{ url_for('static', filename='images/stand.png') }}">
+                    <h3>Stand Mixer - $110</h3>
+                </label>
+            </div>
+            <div class="shop-pic">
+                <label>
+                    <input type="radio" name="item" value="whisk">
+                    <img src="{{ url_for('static', filename='images/whisk.png') }}">
+                    <h3>Whisk - $7</h3>
+                </label>
+            </div>
+        </div>
+        <div class="shop-pic">
+            <p><input type="submit" value="Choose Favorite Item"></p>
+        </div>
+        </form>
+    </div>
+</body>
+</html>
